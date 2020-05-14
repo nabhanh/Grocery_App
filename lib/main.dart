@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'home_page.dart';
+import 'package:groceryapp/signin_screen.dart';
+import 'package:groceryapp/welcome_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,10 +11,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        primaryColor: Colors.greenAccent,
       ),
-      home: HomePage(),
-      routes: <String, WidgetBuilder>{},
+      home: WelcomeScreen(),
+      routes: {
+        WelcomeScreen.id: (context) => WelcomeScreen(),
+        SignInScreen.id: (context) => SignInScreen(),
+      },
     );
   }
 }
